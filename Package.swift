@@ -3,26 +3,16 @@
 
 import PackageDescription
 
+let faceSDK: Target = .binaryTarget(name: "FaceSDK", url: "https://pods.regulaforensics.com/FaceSDK/6.1.1825/FaceSDK-6.1.1825.zip", checksum: "9b313d81bf540035f0bcd059ec5612fe517fd841746225486f397c6c65a88719")
+
 let package = Package(
     name: "FaceSDKApi",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "FaceSDKApi",
-            targets: ["FaceSDKApi"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+            targets: ["FaceSDK"]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "FaceSDKApi",
-            dependencies: []),
-        .testTarget(
-            name: "FaceSDKApiTests",
-            dependencies: ["FaceSDKApi"]),
+        faceSDK
     ]
 )
